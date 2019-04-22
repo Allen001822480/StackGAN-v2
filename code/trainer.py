@@ -624,7 +624,7 @@ class condGANTrainer(object):
                 errG = errG + errG_patch
             errG_total = errG_total + errG
             if flag == 0:
-                summary_D = summary.scalar('G_loss%d' % i, errG.data[0])
+                summary_D = summary.scalar('G_loss%d' % i, errG.data)
                 self.summary_writer.add_summary(summary_D, count)
 
         # Compute color consistency losses

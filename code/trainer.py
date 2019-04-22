@@ -604,7 +604,7 @@ class condGANTrainer(object):
         optD.step()
         # log
         if flag == 0:
-            summary_D = summary.scalar('D_loss%d' % idx, errD.data[0])
+            summary_D = summary.scalar('D_loss%d' % idx, errD.data)
             self.summary_writer.add_summary(summary_D, count)
         return errD
 

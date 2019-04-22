@@ -733,9 +733,9 @@ class condGANTrainer(object):
                 predictions.append(pred.data.cpu().numpy())
 
                 if count % 100 == 0:
-                    summary_D = summary.scalar('D_loss', errD_total.data[0])
-                    summary_G = summary.scalar('G_loss', errG_total.data[0])
-                    summary_KL = summary.scalar('KL_loss', kl_loss.data[0])
+                    summary_D = summary.scalar('D_loss', errD_total.data)
+                    summary_G = summary.scalar('G_loss', errG_total.data)
+                    summary_KL = summary.scalar('KL_loss', kl_loss.data)
                     self.summary_writer.add_summary(summary_D, count)
                     self.summary_writer.add_summary(summary_G, count)
                     self.summary_writer.add_summary(summary_KL, count)
